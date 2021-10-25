@@ -40,8 +40,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'django-dajaxice'
-copyright = u'2012, Jorge Bastida'
+project = 'django-dajaxice'
+copyright = '2012, Jorge Bastida'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -51,10 +51,10 @@ import pkg_resources
 try:
     release = pkg_resources.get_distribution('django-dajaxice').version
 except pkg_resources.DistributionNotFound:
-    print 'To build the documentation, The distribution information of django-dajaxice'
-    print 'Has to be available.  Either install the package into your'
-    print 'development environment or run "setup.py develop" to setup the'
-    print 'metadata.  A virtualenv is recommended!'
+    print('To build the documentation, The distribution information of django-dajaxice')
+    print('Has to be available.  Either install the package into your')
+    print('development environment or run "setup.py develop" to setup the')
+    print('metadata.  A virtualenv is recommended!')
     sys.exit(1)
 del pkg_resources
 
@@ -186,8 +186,8 @@ htmlhelp_basename = 'django-dajaxicedoc'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'django-dajaxice.tex', u'django-dajaxice Documentation',
-   u'Jorge Bastida', 'manual'),
+  ('index', 'django-dajaxice.tex', 'django-dajaxice Documentation',
+   'Jorge Bastida', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -219,6 +219,6 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'django-dajaxice', u'django-dajaxice Documentation',
-     [u'Jorge Bastida'], 1)
+    ('index', 'django-dajaxice', 'django-dajaxice Documentation',
+     ['Jorge Bastida'], 1)
 ]

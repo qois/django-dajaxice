@@ -99,7 +99,7 @@ class Dajaxice(object):
         """ Return an easy to loop module hierarchy with all the functions."""
         if not self._modules:
             self._modules = DajaxiceModule()
-            for name, function in self._registry.items():
+            for name, function in list(self._registry.items()):
                 self._modules.add(name, function)
         return self._modules
 
