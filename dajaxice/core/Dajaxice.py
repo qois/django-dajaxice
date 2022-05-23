@@ -1,3 +1,4 @@
+import importlib
 import logging
 
 from importlib import import_module
@@ -117,7 +118,7 @@ def dajaxice_autodiscover():
         return
     LOADING_DAJAXICE = True
 
-    import imp
+    import importlib.machinery
     from django.conf import settings
 
     for app in settings.INSTALLED_APPS:
@@ -127,11 +128,7 @@ def dajaxice_autodiscover():
         except AttributeError:
             continue
 
-        try:
-            imp.find_module('ajax', app_path)
-        except ImportError:
-            continue
-
-        import_module("%s.ajax" % app)
+        if importlib.machinery.PathFinder().find_spec('ajax', app_path):
+            import_module("%s.ajax" % app)
 
     LOADING_DAJAXICE = False
