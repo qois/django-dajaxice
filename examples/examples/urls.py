@@ -1,7 +1,10 @@
-from django.conf.urls import include, url
+from django.conf.urls import include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.urls import re_path, path
 
 from dajaxice.core import dajaxice_autodiscover, dajaxice_config
+from simple import views
+
 dajaxice_autodiscover()
 
 # Uncomment the next two lines to enable the admin:
@@ -18,8 +21,8 @@ urlpatterns = [
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
-    url(dajaxice_config.dajaxice_url, include('dajaxice.urls')),
-    url(r'', 'simple.views.index')
+    re_path(dajaxice_config.dajaxice_url, include('dajaxice.urls')),
+    re_path(r'', views.index)
 ]
 
 urlpatterns += staticfiles_urlpatterns()
